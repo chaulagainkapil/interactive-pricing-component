@@ -1,0 +1,269 @@
+@import "./variables";
+@import "./toggle";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.discmob {
+  display: none;
+}
+.active{
+    color: $ClDDBlue!important;;
+}
+body {
+  background-image: url(../images/bg-pattern.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 100% 50%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font__manrope;
+  background-color: $ClPBlue;
+}
+.container {
+  padding: 0;
+}
+.main {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  &__head {
+    background-image: url(../images/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 2rem 0;
+    h1 {
+      color: $ClDDBlue;
+      font-weight: $font__ebold;
+      padding-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: $font_para;
+      color: $ClGBlue;
+      font-weight: $font__ebold;
+    }
+  }
+  &__card {
+    background-color: $ClWhite;
+    border-radius: 8px;
+    padding: 4rem;
+    text-align: left;
+    &--upper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 0 2rem 0;
+      border-bottom: 2px solid $ClLGrayBlue;
+      gap: 3rem 4rem;
+      width: 396px;
+      &--views {
+        p {
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          color: $ClGBlue;
+          font-size: $font_para;
+          font-weight: $font__ebold;
+        }
+      }
+      &--price {
+        p {
+          color: $ClGBlue;
+          font-size: $font_para;
+          font-weight: $font__ebold;
+          span {
+            color: $ClDDBlue;
+            font-size: 2rem;
+          }
+        }
+      }
+      &--slider {
+        grid-area: 2/ 1/ 2 / 3;
+        text-align: center;
+        #myRange {
+          -webkit-appearance: none; /* Override default CSS styles */
+          appearance: none;
+          width: 100%; /* Full-width */
+          height: 8px;
+          background-color: $ClSoCyan;
+          outline: none;
+          -webkit-transition: 0.2s;
+          transition: opacity 0.2s;
+          border-radius: 4px;
+          &:hover{
+            background-color: $ClStrCyan;
+          }
+          &::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Override default look */
+            appearance: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: $ClStrCyan;
+            background-image: url(../images/icon-slider.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer; /* Cursor on hover */
+            box-shadow: 0 8px 15px $ClSoCyan;
+            &:hover{
+                background-color: $ClSoCyan;
+                background-image: url(../images/icon-slider2.svg);
+            }
+          }
+          &::-moz-range-thumb {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: $ClStrCyan;
+            background-image: url(../images/icon-slider.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer; /* Cursor on hover */
+            box-shadow: 0 8px 15px $ClSoCyan;
+            &:hover{
+                background-color: $ClSoCyan;
+                background-image: url(../images/icon-slider2.svg);
+            }
+          }
+        }
+      }
+      &--select {
+        text-align: center;
+        grid-area: 3/ 1/ 3 / 3;
+        label {
+          padding: 0 8px;
+        }
+        .toggleT {
+          font-size: 12px;
+          font-weight: $font__ebold;
+          color: $ClGBlue;
+        }
+        .toggleT2 {
+          position: relative;
+          span {
+            position: absolute;
+            background-color: $ClgryRed;
+            color: $ClLRed;
+            padding: 4px;
+            margin-left: 4px;
+            border-radius: 12px;
+            right: -85px;
+          }
+        }
+      }
+    }
+    &--lower {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      &--left {
+        ul {
+          list-style: none;
+          li {
+            list-style-image: url(../images/icon-check.svg);
+            font-size: 14px;
+            color: $ClGBlue;
+            padding-bottom: 4px;
+            padding-left: 0.5rem;
+            text-align: left;
+          }
+        }
+      }
+      &--right {
+        button {
+          background-color: $ClDDBlue;
+          border: none;
+          border-radius: 36px;
+          color: $ClLGrayBlue;
+          letter-spacing: 1.5px;
+          font-weight: $font__bold;
+          padding: 12px 40px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 12px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .discmob {
+    display: block;
+  }
+  .discDesk {
+    display: none;
+  }
+  body {
+    background-size: 100% 40%;
+    display: block;
+    height: auto;
+  }
+  .container {
+    padding: 40px 20px;
+  }
+  .main {
+    gap: 1.5rem;
+    &__card {
+      padding: 4rem 2rem;
+      text-align: center;
+      &--upper {
+        grid-template-columns: 1fr;
+        width: auto;
+        &--views {
+          grid-area: 1 / 1 / 1 / 2;
+          p{
+            font-size: 18px;
+          }
+        }
+        &--slider {
+          grid-area: 2 / 1 / 2 / 2;
+        }
+        &--price {
+          grid-area: 3 / 1 / 3 / 2;
+          p{
+            font-size: 18px;
+            span{
+                font-size: 3rem;
+            }
+          }
+        }
+        &--select {
+          grid-area: 4 / 1 / 4 / 2;
+          label {
+            padding: 0 4px;
+          }
+          .toggleT2 {
+            span {
+              right: -40px;
+              top: 0;
+            }
+          }
+        }
+      }
+      &--lower {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: 370px) {
+  .main {
+    &__card {
+      padding: 4rem 1rem;
+    }
+  }
+}

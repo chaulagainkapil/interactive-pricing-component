@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.js"
+      integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+      crossorigin="anonymous"
+    ></script>
+    <title>Interactive pricing component</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main">
+        <div class="main__head">
+          <h1>Simple, traffic-based pricing</h1>
+          <p>Sign-up for our 30-day trial. No credit card required.</p>
+        </div>
+        <div class="main__card">
+          <div class="main__card--upper">
+            <div class="main__card--upper--views">
+              <p><span>50K</span> Pageviews</p>
+            </div>
+            <div class="main__card--upper--price">
+              <p><span>$19.80</span> /month</p>
+            </div>
+            <div class="main__card--upper--slider">
+              <input
+                type="range"
+                min="1"
+                max="100"
+                value="50"
+                class="slider"
+                id="myRange"
+              />
+            </div>
+            <div class="main__card--upper--select">
+              <label for="switch" class="toggleT toggleT1 active">Monthly Billing</label>
+              <label class="switch">
+                <input type="checkbox">
+                <span class="toggle round"></span>
+              </label>
+              <label for="switch" class="toggleT toggleT2">Yearly Billing <span class="discDesk"> 25% Discount</span> <span class="discmob"> -25%</span>  </label>
+            </div>
+          </div>
+          <div class="main__card--lower">
+            <div class="main__card--lower--left">
+              <ul>
+                <li>Unlimited websites</li>
+                <li>100% data ownership</li>
+                <li>Email reports</li>
+              </ul>
+            </div>
+            <div class="main__card--lower--right">
+              <button>Start my trial</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
