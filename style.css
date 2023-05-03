@@ -131,7 +131,7 @@ body {
   align-items: center;
   padding: 0 0 2rem 0;
   border-bottom: 2px solid hsl(224, 65%, 95%);
-  gap: 3rem 4rem;
+  gap: 3rem;
   width: 396px;
 }
 .main__card--upper--views p {
