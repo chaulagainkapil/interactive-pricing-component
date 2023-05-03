@@ -122,6 +122,7 @@ body {
   border-radius: 8px;
   padding: 4rem;
   text-align: left;
+  box-shadow: 6px 6px 10px hsl(225, 20%, 60%);
 }
 .main__card--upper {
   display: grid;
