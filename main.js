@@ -4,7 +4,7 @@ function calc() {
   $(".main__card--upper--views>p>span").html($("#myRange").val() + "K");
   var newPrice = basePrice + $("#myRange").val() * increment - increment;
   var newPriceF = newPrice.toFixed(2);
-  $(".main__card--upper--price>p>span").html(newPriceF);
+  $(".main__card--upper--price>p>span").html("$"+newPriceF);
 }
 function calc2() {
   if ($(".toggleT2").hasClass("active")) {
